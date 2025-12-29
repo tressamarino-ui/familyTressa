@@ -1,0 +1,96 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #1f2937;
+  color: white;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar button {
+  background-color: #374151;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.navbar button.active {
+  background-color: #2563eb;
+}
+
+#slides {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+.slide.active {
+  display: block;
+}
+
+.profile {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.profile img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid #e5e7eb;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile ul { list-style: none; padding: 0; }
+.profile li { margin-bottom: 8px; }
+
+/* Tree dengan gambar */
+#tree { margin-top: 20px; padding-left: 20px; }
+.node {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 10px;
+  position: relative;
+}
+.node img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.node span {
+  font-weight: bold;
+}
+
+/* Form Input */
+form label { display: block; margin-bottom: 8px; }
+form input { padding: 5px; margin-left: 5px; }
+form button { padding: 8px 12px; margin-top: 10px; }
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #e5e7eb;
+  font-size: 14px;
+}

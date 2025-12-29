@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mochammad Tressa Family Tree</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h1>Mochammad Tressa Family Tree</h1>
+  <nav>
+    <button onclick="showSlide('input')">Input Anggota</button>
+    <button onclick="showSlide('tree-section')">Visualisasi Tree</button>
+    <button onclick="showSlide('algoritma')">Algoritma</button>
+    <button onclick="showSlide('struktur-data')">Struktur Data</button>
+    <button onclick="showSlide('panduan')">Panduan</button>
+    <button onclick="showSlide('konsep-mtk')">Konsep Mtk</button>
+    <button onclick="showSlide('about')">About</button>
+  </nav>
+</header>
+
+<div id="slides">
+
+  <!-- Input Slide -->
+  <section class="slide" id="input">
+    <h2>Input Anggota Keluarga</h2>
+    <form id="input-form">
+      <label>Nama: <input type="text" id="nama"></label>
+      <label>Nama Orang Tua: <input type="text" id="parent"></label>
+      <label>Avatar URL: <input type="text" id="avatar"></label>
+      <button type="submit">Tambah</button>
+    </form>
+  </section>
+
+  <!-- Visualisasi Tree Slide -->
+  <section class="slide" id="tree-section">
+    <h2>Visualisasi Family Tree</h2>
+    <div id="tree"></div>
+  </section>
+
+  <!-- Algoritma Slide -->
+  <section class="slide" id="algoritma">
+    <h2>Algoritma</h2>
+    <pre>
+function traversePreOrder(node) {
+  console.log(node.nama);
+  node.anak.forEach(child => traversePreOrder(child));
+}
+
+function findNode(node, name) {
+  if(node.nama === name) return node;
+  for(let child of node.anak){
+    const found = findNode(child, name);
+    if(found) return found;
+  }
+  return null;
+}
+
+function addChild(parentName, childName, avatar) {
+  const parentNode = findNode(familyTree, parentName);
+  if(!parentNode){
+    familyTree.anak.push({nama: childName, avatar: avatar, anak: []});
+  } else {
+    parentNode.anak.push({nama: childName, avatar: avatar, anak: []});
+  }
+}
+    </pre>
+  </section>
+
+  <!-- Struktur Data Slide -->
+  <section class="slide" id="struktur-data">
+    <h2>Struktur Data</h2>
+    <pre>
+Node {
+  nama: string
+  avatar: string (path gambar)
+  anak: array of Node
+}
+    </pre>
+    <p>Contoh tree:</p>
+    <pre>
+Yulianti Ramadhan
+├─ Juan Calvin Dzikir Suitela
+└─ Mochammad Tressa Marino Suitela
+    </pre>
+  </section>
+
+  <!-- Panduan Slide -->
+  <section class="slide" id="panduan">
+    <h2>Panduan Aplikasi</h2>
+    <ol>
+      <li>Input anggota keluarga di menu Input</li>
+      <li>Lihat tree di menu Visualisasi Tree</li>
+      <li>Gunakan Algoritma & Struktur Data untuk laporan</li>
+    </ol>
+  </section>
+
+  <!-- Konsep Mtk Slide -->
+  <section class="slide" id="konsep-mtk">
+    <h2>Konsep Matematika</h2>
+    <p>Tree adalah struktur data hierarki yang menampilkan hubungan antara node induk dan anak.</p>
+  </section>
+
+  <!-- About Slide -->
+  <section class="slide" id="about">
+    <h2>About</h2>
+    <p>Aplikasi ini dibuat sebagai project UAS Matematika Informatika untuk memodelkan struktur data pohon (tree) menggunakan studi kasus silsilah keluarga Mochammad Tressa Marino Suitela.</p>
+    <div class="profile">
+      <img src="assets/tressa.png" alt="Avatar">
+      <ul>
+        <li><strong>Nama Mahasiswa:</strong> Mochammad Tressa Marino Suitela</li>
+        <li><strong>NIM:</strong> 252505005</li>
+        <li><strong>Program Studi:</strong> Sistem Informasi</li>
+        <li><strong>Mata Kuliah:</strong> Matematika Informatika</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 Mochammad Tressa Marino Suitela</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
